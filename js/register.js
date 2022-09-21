@@ -9,7 +9,7 @@ const email = document.querySelector("#floatingInput");
 const password = document.querySelector("#floatingPassword");
 const displayErrorMessage = document.querySelector(".h1");
 const removeForm = document.querySelectorAll(".form-floating");
-const displaySignInButton = document.querySelector(".send_to_signin")
+const displaySignInButton = document.querySelector(".send_to_signin");
 
 const submit = document.querySelector("#submit");
 submit.addEventListener("click", valueInput);
