@@ -10925,4 +10925,8 @@ textarea.form-control-lg {
 html,
 body {
   height: 100%;
+}
+
+.send_to_signin {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */
