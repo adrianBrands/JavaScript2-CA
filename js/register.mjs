@@ -1,8 +1,6 @@
 //register user
   
-const baseUrl_API = "https://nf-api.onrender.com";
-const registerUrl = `${baseUrl_API}/api/v1/social/auth/register`;
-
+ import { registerUrl } from "./API_URLs.mjs"; 
 
 const username = document.querySelector("#username");
 const email = document.querySelector("#floatingInput");
@@ -13,10 +11,6 @@ const displaySignInButton = document.querySelector(".send_to_signin");
 
 const submit = document.querySelector("#submit");
 submit.addEventListener("click", valueInput);
-
-
-
-
 
 function valueInput(event){
     const userInput = {
@@ -78,3 +72,4 @@ function valueInput(event){
 
 
 
+console.log("hello");

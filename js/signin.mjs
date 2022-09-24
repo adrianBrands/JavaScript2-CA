@@ -1,21 +1,24 @@
-//Signin
-const baseUrl_API = "https://nf-api.onrender.com";
-const registerUrl = `${baseUrl_API}/api/v1/social/auth/login`;
 
+import { signinrUrl } from "./API_URLs.mjs";
 
-const username = document.querySelector("#username");
 const email = document.querySelector("#floatingInput");
 const password = document.querySelector("#floatingPassword");
-
+const displayMessage = document.querySelector(".h1");
 const removeForm = document.querySelectorAll(".form-floating");
-
-
 const submit = document.querySelector("#submit");
+
+
+const getLocal = localStorage.getItem("accsessToken");
+if (getLocal !== null){
+    removeForm.forEach((e) => {
+        e.style.display = "none";
+    });
+    displayMessage.innerHTML = `You are logged in`;
+    submit.style.display = "none";
+}
+
+
 submit.addEventListener("click", valueInput);
-
-
-
-
 
 function valueInput(event){
     const userInput = {
@@ -38,12 +41,12 @@ function valueInput(event){
             const json = await response.json();
             console.log(json);
             const accessToken = json.accessToken;
-            localStorage.setItem("accsessToken", accessToken);
+            
             if(json.email === email.value){
-                //window.open("profile.html", "_self");
-                
-              
-              
+                localStorage.setItem("accsessToken", accessToken);
+                window.open("profile.html", "_self");
+            } else {
+                displayMessage.innerHTML = `wrong email or password, try again`;
             }
             
     
@@ -53,17 +56,12 @@ function valueInput(event){
     }
  
   event.preventDefault();
-  registerUser(registerUrl, userInput) 
+  registerUser(signinrUrl, userInput) 
 }    
     
     
 
-/*function rederect () {
-    location.href("profile.html");
-}    
- 
 
-rederect();*/
 
 
 
