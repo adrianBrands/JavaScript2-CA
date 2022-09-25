@@ -13,7 +13,7 @@ const submit = document.querySelector("#submit");
 submit.addEventListener("click", valueInput);
 
 function valueInput(event){
-    const userInput = {
+    const userInputRegister = {
         name: username.value,
         email: email.value,
         password: password.value,
@@ -55,7 +55,7 @@ function valueInput(event){
     }
  
   event.preventDefault();
-  registerUser(registerUrl, userInput) 
+  registerUser(registerUrl, userInputRegister) 
 }
 
 
@@ -72,4 +72,3 @@ function valueInput(event){
 
 
 
-console.log("hello");
