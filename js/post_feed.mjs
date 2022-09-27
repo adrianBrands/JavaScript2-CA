@@ -27,3 +27,7 @@ async function getPosts(url) {
 }   
 
 getPosts(posts);
+
+
+//make post
+
