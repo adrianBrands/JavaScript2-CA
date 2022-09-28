@@ -6,21 +6,10 @@ const password = document.querySelector("#floatingPassword");
 const displayMessage = document.querySelector(".h1");
 const removeForm = document.querySelectorAll(".form-floating");
 const submit = document.querySelector("#submit");
-
-
-const getLocal = localStorage.getItem("accsessToken");
-if (getLocal !== null){
-    removeForm.forEach((e) => {
-        e.style.display = "none";
-    });
-    displayMessage.innerHTML = `You are logged in`;
-    submit.style.display = "none";
-}
-
-
 submit.addEventListener("click", valueInput);
 
-function valueInput(event){
+function valueInput (event) {
+    event.preventDefault();
     const userInput = {
         email: email.value,
         password: password.value,
@@ -44,6 +33,7 @@ function valueInput(event){
             
             if(json.email === email.value){
                 localStorage.setItem("accsessToken", accessToken);
+                localStorage.setItem("userName", json.name)
                 window.open("profile.html", "_self");
             } else {
                 displayMessage.innerHTML = `wrong email or password, try again`;
@@ -55,11 +45,24 @@ function valueInput(event){
         }
     }
  
-  event.preventDefault();
+  
   registerUser(signinrUrl, userInput) 
 }    
     
-    
+
+const checkIfLoggedIn = () => {
+    const getLocal = localStorage.getItem("accsessToken");
+if (getLocal !== null){
+    removeForm.forEach((e) => {
+        e.style.display = "none";
+    });
+    displayMessage.innerHTML = `You are logged in`;
+    submit.style.display = "none";
+}
+
+}
+
+checkIfLoggedIn();
 
 
 

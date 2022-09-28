@@ -1,7 +1,7 @@
-import { posts, authorization, testSomething } from "./API_URLs.mjs";
+import { posts, authorization} from "./API_URLs.mjs";
+import {displayPostsProfile} from "./post_feed_export.mjs";
 
-    
-    
+
 async function getPosts(url) {
     try{
         const getData = {
@@ -15,7 +15,8 @@ async function getPosts(url) {
         const response = await fetch(url, getData);
         console.log(response);
         const json = await response.json();
-        testSomething(json);
+        
+        displayPostsProfile(json);
        
     } catch (error) {
        console.log(error);

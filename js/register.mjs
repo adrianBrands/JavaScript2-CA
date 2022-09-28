@@ -12,12 +12,24 @@ const displaySignInButton = document.querySelector(".send_to_signin");
 const submit = document.querySelector("#submit");
 submit.addEventListener("click", valueInput);
 
+ 
+
+
+
 function valueInput(event){
+    event.preventDefault();
+    
     const userInputRegister = {
         name: username.value,
         email: email.value,
         password: password.value,
     };
+
+    const validateEmail = (email) => {
+        const regEx = /^[\w\-.]+@(stud.)?noroff.no$/g;
+        const patternMatches = regEx.test(email);
+        return patternMatches;
+    }
 
     async function registerUser(url, userData){
         //console.log(url, userData);
@@ -33,6 +45,12 @@ function valueInput(event){
             //console.log(response);
             const json = await response.json();
             console.log(json);
+
+            if(!validateEmail(email.value)){
+                console.log("wrong email");
+
+            }
+            
             if(json.message === "Profile already exists"){
               displayErrorMessage.innerHTML = json.message;
               displayErrorMessage.style.color = "red";
@@ -54,7 +72,7 @@ function valueInput(event){
         }
     }
  
-  event.preventDefault();
+  
   registerUser(registerUrl, userInputRegister) 
 }
 
