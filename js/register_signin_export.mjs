@@ -1,0 +1,31 @@
+const email = document.querySelector("#floatingInput");
+const password = document.querySelector("#floatingPassword");
+const displayMessage = document.querySelector(".h1");
+const removeForm = document.querySelectorAll(".form-floating");
+const submit = document.querySelector("#submit");
+const username = document.querySelector("#username");
+const displayErrorMessage = document.querySelector(".h1");
+const displaySignInButton = document.querySelector(".send_to_signin");
+
+const validateEmail = (email) => {
+    const regEx = /^[\w\-.]+@(stud.)?noroff.no$/g;
+    const patternMatches = regEx.test(email);
+    return patternMatches;
+}
+
+const checkIfLoggedIn = () => {
+    const getLocal = localStorage.getItem("accsessToken");
+if (getLocal !== null){
+    removeForm.forEach((e) => {
+        e.style.display = "none";
+    });
+    displayMessage.innerHTML = `You are logged in`;
+    submit.style.display = "none";
+}
+
+}
+
+
+
+export {email, password, displayMessage, removeForm, submit, validateEmail, username, displayErrorMessage, 
+    displaySignInButton, checkIfLoggedIn};

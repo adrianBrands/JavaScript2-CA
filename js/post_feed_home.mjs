@@ -1,4 +1,4 @@
-import { posts, authorization} from "./API_URLs.mjs";
+import { posts, authorization} from "./API_URLs_export.mjs";
 import {displayPostsHome} from "./post_feed_export.mjs";
 
 

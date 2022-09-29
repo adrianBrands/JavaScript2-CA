@@ -1,19 +1,7 @@
 //register user
-  
- import { registerUrl } from "./API_URLs.mjs"; 
-
-const username = document.querySelector("#username");
-const email = document.querySelector("#floatingInput");
-const password = document.querySelector("#floatingPassword");
-const displayErrorMessage = document.querySelector(".h1");
-const removeForm = document.querySelectorAll(".form-floating");
-const displaySignInButton = document.querySelector(".send_to_signin");
-
-const submit = document.querySelector("#submit");
-submit.addEventListener("click", valueInput);
-
- 
-
+  import { registerUrl} from "./API_URLs_export.mjs"; 
+  import { validateEmail, username, email, password, displayErrorMessage, removeForm, displaySignInButton,
+    submit} from "./register_signin_export.mjs";
 
 
 function valueInput(event){
@@ -25,11 +13,7 @@ function valueInput(event){
         password: password.value,
     };
 
-    const validateEmail = (email) => {
-        const regEx = /^[\w\-.]+@(stud.)?noroff.no$/g;
-        const patternMatches = regEx.test(email);
-        return patternMatches;
-    }
+    validateEmail();
 
     async function registerUser(url, userData){
         //console.log(url, userData);
@@ -76,7 +60,7 @@ function valueInput(event){
   registerUser(registerUrl, userInputRegister) 
 }
 
-
+submit.addEventListener("click", valueInput);
 //adrian_b
 //AdrBra10066@stud.noroff.no
 //ReinungaMaxHufsi1894
