@@ -4,10 +4,15 @@
  const registerUrl = `${baseUrl_API}/api/v1/social/auth/register`;
  const signinrUrl = `${baseUrl_API}/api/v1/social/auth/login`;
  const posts = `${baseUrl_API}/api/v1/social/posts/?_author=true`;
+ 
+ const postId = `${baseUrl_API}/api/v1/social/posts/id/?_author=true`;
+
+ const postsTest = `${baseUrl_API}/api/v1/social/posts/`;
+ const postTest2 = `?_author=true`;
 
 
 
-export {signinrUrl, registerUrl, posts, authorization};
+export {signinrUrl, registerUrl, posts, authorization, postId, postsTest, postTest2};
 
 
 

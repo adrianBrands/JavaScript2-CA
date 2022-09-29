@@ -6,9 +6,10 @@ export const displayPostsProfile = (json) => {
             image: json[i].media,
             created: json[i].created,
             body: json[i].body,
+            id: json[i].id,
         };
         
-        const {username, image, created, body} = postContent;
+        const {username, image, created, body, id} = postContent;
         
         
         if (image === ""){
@@ -18,12 +19,12 @@ export const displayPostsProfile = (json) => {
         const createHtmlPosts = document.querySelector(".col-sm-7");
         createHtmlPosts.innerHTML += 
         `<div class="card mb-3">
-            <img src="${image}" class="card-img-top" alt="image uploaded by ${username} ">
+            <a href="post.html?id=${id}"><img src="${image}" class="card-img-top" alt="image uploaded by ${username} ">
             <div class="card-body">
                 <h5 class="card-title">${username}</h5>
                 <p class="card-text">${body}</small></p>
                 <p class="card-text"><small class="text-muted">Published ${created}</small></p>
-            </div>
+            </div></a>
         </div>`;
 
     }
