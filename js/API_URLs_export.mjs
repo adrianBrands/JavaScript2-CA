@@ -7,12 +7,12 @@
  
  const postId = `${baseUrl_API}/api/v1/social/posts/id/?_author=true`;
 
- const postsTest = `${baseUrl_API}/api/v1/social/posts/`;
- const postTest2 = `?_author=true`;
+ const post_posts_mjs = `${baseUrl_API}/api/v1/social/posts/`;
+ const post_author_mjs  = `?_author=true`;
 
 
 
-export {signinrUrl, registerUrl, posts, authorization, postId, postsTest, postTest2};
+export {signinrUrl, registerUrl, posts, authorization, postId, post_posts_mjs, post_author_mjs};
 
 
 

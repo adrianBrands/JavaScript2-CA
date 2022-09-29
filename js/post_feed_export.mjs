@@ -40,13 +40,14 @@ export const displayPostsHome = (json) => {
         if (json[i].media ===  ""){
             continue
         }
-        createHtmlPosts.innerHTML += `<div class="card mb-3 w-75">
-        <img src="${json[i].media}" class="card-img-top" alt="image uploaded by ${json[i].author.name}">
+        createHtmlPosts.innerHTML += `
+        <div class="card mb-3 w-75">
+        <a href="post.html?id=${json[i].id}"><img src="${json[i].media}" class="card-img-top" alt="image uploaded by ${json[i].author.name}">
         <div class="card-body">
             <h5 class="card-title">${json[i].author.name}</h5>
             <p class="card-text">${json[i].body}</small></p>
             <p class="card-text"><small class="text-muted">Published ${json[i].updated} </small></p>
-        </div>
+        </div></a>
     </div>`;
         
 

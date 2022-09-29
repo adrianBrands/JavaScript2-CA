@@ -1,11 +1,11 @@
-import { postsTest, postTest2, authorization } from "./API_URLs_export.mjs";
+import { post_posts_mjs, post_author_mjs, authorization } from "./API_URLs_export.mjs";
 
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const postURL = postsTest + id + postTest2;
+const postURL = post_posts_mjs + id + post_author_mjs;
 
 console.log(postURL);
 
