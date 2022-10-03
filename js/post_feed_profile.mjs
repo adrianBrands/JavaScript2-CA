@@ -16,7 +16,9 @@ async function getPosts(url) {
         console.log(response);
         const json = await response.json();
         
-        displayPostsProfile(json);
+
+    
+    //displayPostsProfile(json);
        
     } catch (error) {
        console.log(error);
@@ -24,6 +26,10 @@ async function getPosts(url) {
 }   
 
 getPosts(posts);
+
+
+
+
 
 
 //add posts to the feed
