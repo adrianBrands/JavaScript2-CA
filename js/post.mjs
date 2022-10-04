@@ -1,11 +1,11 @@
-import { post_posts_mjs, post_author_mjs, authorization } from "./API_URLs_export.mjs";
-
+import { post, post_author, authorization } from "./API_URLs_export.mjs";
+import { displayPostById } from "./posts/post_content_export.mjs";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const postURL = post_posts_mjs + id + post_author_mjs;
+const postURL = post + id + post_author;
 
 console.log(postURL);
 
@@ -22,23 +22,13 @@ async function getPosts(url) {
         const response = await fetch(url, getData);
         console.log(response);
         const json = await response.json();
-        displayPost(json)
-       
+        displayPostById(json);
+        
     } catch (error) {
        console.log(error);
     }
 } 
 
-const displayPost = (json) => {
-    const createHtmlPost = document.querySelector(".post");
-    createHtmlPost.innerHTML += `<div class="card mb-3 w-75">
-        <img src="${json.media}" class="card-img-top" alt="image uploaded by ${json.author.name}">
-        <div class="card-body">
-            <h5 class="card-title">${json.author.name}</h5>
-            <p class="card-text">${json.body}</small></p>
-            <p class="card-text"><small class="text-muted">Published ${json.updated} </small></p>
-        </div>
-    </div>`;
-}
+
 
 getPosts(postURL);
