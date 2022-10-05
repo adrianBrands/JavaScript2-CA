@@ -10932,5 +10932,14 @@ body {
 }
 
 .update_post_button {
+  border-radius: 15px;
+  border: none;
+}
+
+.flex-grow-1 {
   display: none;
+}
+
+a {
+  text-decoration: none;
 }/*# sourceMappingURL=styles.css.map */

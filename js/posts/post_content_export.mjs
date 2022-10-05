@@ -1,11 +1,12 @@
-function postContent (post) {
+export function postContent (post) {
     return  {
         title: post.title,
         username: post.author.name,
         image: post.media,
         created: post.created,
         body: post.body,
-        id: post.id
+        id: post.id,
+        tags: post.tags
     };
 }
 
@@ -22,6 +23,7 @@ export const displayPostsProfile = (posts) => {
             <h4 class="card-text">${title}</small></h4>
             <p class="card-text">${body}</small></p>
             <p class="card-text"><small class="text-muted">Published ${created} </small></p>
+            
         </div></a>
     </div>`;
     })
@@ -50,8 +52,8 @@ export const displayPostsHome = (posts) => {
 
 export const displayPostById = (post) => {
     const createHtmlPost = document.querySelector(".post");
-    const {username, image, created, body, title } = postContent(post);
-    const userName = localStorage.getItem("userName");
+    const {username, image, created, body, title, tags } = postContent(post);
+    
     
     
     createHtmlPost.innerHTML += `<div class="card mb-3 w-75">
@@ -60,15 +62,12 @@ export const displayPostById = (post) => {
             <h5 class="card-title">${username}</h5>
             <h4 class="card-text">${title}</small></h4>
             <p class="card-text">${body}</small></p>
+            <p class="card-text">${tags}</small></p>
             <p class="card-text"><small class="text-muted">Published ${created} </small></p>
-            <button class="update_post_button">update</button>
+            
         </div>
         
     </div>`;
 
-    if (userName === username){
-        console.log(true);
-    } else {
-        console.log(false);
-    }
+    
 }

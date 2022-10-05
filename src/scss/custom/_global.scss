@@ -11,5 +11,15 @@ html,
 }
 
 .update_post_button {
-display: none;
+  border-radius: 15px;
+  border: none;
+
+}
+
+.flex-grow-1{
+  display: none;
+}
+
+a {
+  text-decoration: none;
 }
