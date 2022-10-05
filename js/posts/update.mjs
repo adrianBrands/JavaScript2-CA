@@ -1,6 +1,7 @@
 import { post, post_author,  } from "../API_URLs_export.mjs";
 import { fetchWithToken } from "../posts/fetch_with_token.mjs";
 
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -18,11 +19,12 @@ async function updatePost(postData) {
     });
 
     const result = await response.json();
+   
+    
     
 
-    console.log(result);
+    
 }
-
 
 
 
@@ -37,11 +39,13 @@ function createFormListener() {
             const formData = new FormData(form);
             const post = Object.fromEntries(formData.entries())
 
-            console.log(post);
             
-            
-    
             updatePost(post);
+            
+            setTimeout( () => {
+                window.location.reload(true);
+            }, 1000);
+        
         } );
     
     }  

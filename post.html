@@ -29,6 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="register.html">Register</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create_post.html">Create post</a>
+                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -40,30 +43,33 @@
     </header>
     <div class="post d-flex flex-column justify-content-center align-items-center w-100 mt-5">
         <h1 class="mb-3 fw-light"></h1>
+        
     </div>
+    <button class="update_post_button">update</button>
 
-    <div class="flex-grow-1">
-        <div class="container-fluid">
+    <div class="flex-grow-1" >
+        <div class="d-flex justify-content-center">
             <div class="col-12 col-md-6">
                 <form id="update_post">
                     <div class="form-group mb-4">
                       <label for="">title</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput1" name="title" required>
+                      <input type="text" class="form-control" id="title" name="title" required>
                     </div>
                     <div class="form-group mb-4">
                       <label for="">body</label>
-                      <textarea class="form-control" id="formGroupExampleInput2" name="body" required></textarea>
+                      <textarea class="form-control" id="body" name="body" required></textarea>
                     </div>
                     <div class="form-group mb-4">
-                        <label for="">Tags</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput3" name="tags">
+                        <label for="">tags</label>
+                        <input type="text" class="form-control" id="tags" name="tags">
                       </div>
                       <div class="form-group mb-4">
-                        <label for="">Media</label>
-                        <input type="url" class="form-control" id="formGroupExampleInput4" name="media">
+                        <label for="">media</label>
+                        <input type="url" class="form-control" id="media" name="media" required>
                       </div>
                      <!-- <button type="button" class="create_post_button btn btn-primary btn-lg mt-3">create post</button>-->
                      <button class="btn btn-success">update post</button>
+                     
                   </form>
                 </div>
             </div>
@@ -72,6 +78,7 @@
     
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="js/post.mjs"></script>   
-    <script type="module" src="js/posts/update.mjs"></script> 
+    <script type="module" src="js/posts/update.mjs"></script>  
+    <script type="module" src="js/posts/remove.mjs"></script>
 </body>
 </html>

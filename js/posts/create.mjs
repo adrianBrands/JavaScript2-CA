@@ -12,6 +12,7 @@ async function createPost(postData) {
 
     const result = await response.json();
     
+   
 
     console.log(result);
 }
@@ -35,6 +36,11 @@ function createFormListener() {
             
     
             createPost(post);
+
+            /*setTimeout( () => {
+                window.open("index.html", "_self");
+            }, 1500);*/
+            
         } );
     
     }  
@@ -49,7 +55,7 @@ createFormListener();
 
 
 
-//delete id 906, 913, 915
+//delete id 906, 913, 915, 1238, 1239
     
 
 
