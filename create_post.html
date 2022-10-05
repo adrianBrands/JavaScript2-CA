@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/css/styles.css">
-    <title>Post</title>
+    <title>create || post </title>
 </head>
 <body>
     <header>
@@ -38,14 +38,10 @@
         </div>
     </nav>
     </header>
-    <div class="post d-flex flex-column justify-content-center align-items-center w-100 mt-5">
-        <h1 class="mb-3 fw-light"></h1>
-    </div>
-
     <div class="flex-grow-1">
         <div class="container-fluid">
             <div class="col-12 col-md-6">
-                <form id="update_post">
+                <form id="create_post">
                     <div class="form-group mb-4">
                       <label for="">title</label>
                       <input type="text" class="form-control" id="formGroupExampleInput1" name="title" required>
@@ -56,22 +52,39 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="">Tags</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput3" name="tags">
+                        <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Tags">
                       </div>
                       <div class="form-group mb-4">
                         <label for="">Media</label>
-                        <input type="url" class="form-control" id="formGroupExampleInput4" name="media">
+                        <input type="url" class="form-control" id="formGroupExampleInput4" placeholder="Media">
                       </div>
                      <!-- <button type="button" class="create_post_button btn btn-primary btn-lg mt-3">create post</button>-->
-                     <button class="btn btn-success">update post</button>
+                     <button class="btn btn-success">create</button>
                   </form>
-                </div>
+
             </div>
         </div>
+    </div>
+    
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+        
+        
+        
     
     
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="js/post.mjs"></script>   
-    <script type="module" src="js/posts/update.mjs"></script> 
+    <script type="module" src="js/post_feed_home.mjs"></script>
+    <script type="module" src="js/search_filter.mjs"></script>
+    <script type="module" src="js/posts/create.mjs"></script>
+        
 </body>
 </html>
