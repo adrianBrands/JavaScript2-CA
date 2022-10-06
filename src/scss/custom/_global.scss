@@ -13,12 +13,17 @@ html,
 .update_post_button {
   border-radius: 25px;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
   background-color: rgb(10, 45, 121);
   color: #fff;
-  
-  
+}
 
+.remove_post_button {
+  border-radius: 25px;
+  border: none;
+  font-size: 25px;
+  background-color: rgb(169, 9, 30);
+  color: #fff;
 }
 
 .flex-grow-1{

@@ -1,7 +1,7 @@
 import { post, post_author, authorization } from "./API_URLs_export.mjs";
 import { displayPostById } from "./posts/post_content_export.mjs";
 //import { postContent } from "./posts/post_content_export.mjs";
-import { jsonValue } from "./checkIf_user_can_update.mjs";
+import { jsonValue } from "./checkIf_user_can_update_remove.mjs";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);

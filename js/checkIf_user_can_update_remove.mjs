@@ -1,7 +1,10 @@
 const form = document.querySelector("#update_post");
 const updateButton = document.querySelector(".update_post_button");
+const removeButton = document.querySelector(".remove_post_button");
 const displayUpdateForm = document.querySelector(".flex-grow-1");
 const userName = localStorage.getItem("userName");
+
+
 
 export function jsonValue (json) {
 const postValues = {
@@ -14,12 +17,7 @@ const postValues = {
 
 const {body, title, image, username, tags } = postValues;
 
-if (userName === username){
-    console.log(true);
-    
-} else {
-    console.log(false);
-}
+
 
 
 form.title.value = title;
@@ -37,8 +35,18 @@ updateButton.addEventListener("click", (event) => {
 
      else {
         updateButton.innerHTML = "you are not the owner of this post";
+        
     }
     
+
+});
+
+removeButton.addEventListener("click", event => {
+    event.preventDefault();
+    if (userName !== username){
+        removeButton.innerHTML = "You do not have permission to remove this post";
+        
+    }
 
 });
 
