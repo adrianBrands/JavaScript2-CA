@@ -1,7 +1,7 @@
 //register user
   import { registerUrl} from "./API_URLs_export.mjs"; 
   import { validateEmail, username, email, password, displayErrorMessage, removeForm, displaySignInButton,
-    submit} from "./register_signin_export.mjs";
+    submit, avatar} from "./register_signin_export.mjs";
 
 
 function valueInput(event){
@@ -11,6 +11,7 @@ function valueInput(event){
         name: username.value,
         email: email.value,
         password: password.value,
+        avatar: avatar.value
     };
 
     validateEmail();
@@ -32,6 +33,7 @@ function valueInput(event){
 
             if(!validateEmail(email.value)){
                 console.log("wrong email");
+                displayErrorMessage.innerHTML = `email has to contain @noroff.no or @stud.noroff.no`;
 
             }
             

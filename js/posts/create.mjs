@@ -12,6 +12,7 @@ async function createPost(postData) {
 
   const result = await response.json();
   const error = result.error;
+  console.log(result);
 
   if (error) {
     displayErrorMessage.innerHTML = `${error}`;
@@ -38,3 +39,4 @@ function createFormListener() {
   }
 }
 createFormListener();
+

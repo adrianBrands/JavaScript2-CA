@@ -4,6 +4,7 @@ const displayMessage = document.querySelector(".h1");
 const removeForm = document.querySelectorAll(".form-floating");
 const submit = document.querySelector("#submit");
 const username = document.querySelector("#username");
+const avatar = document.querySelector("#avatar");
 const displayErrorMessage = document.querySelector(".h1");
 const displaySignInButton = document.querySelector(".send_to_signin");
 
@@ -27,5 +28,5 @@ if (getLocal !== null){
 
 
 
-export {email, password, displayMessage, removeForm, submit, validateEmail, username, displayErrorMessage, 
+export {email, password, displayMessage, removeForm, submit, avatar, validateEmail, username, displayErrorMessage, 
     displaySignInButton, checkIfLoggedIn};

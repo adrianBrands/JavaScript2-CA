@@ -7,6 +7,9 @@ html,
 //register.html 
 
 .send_to_signin {
+  color: rgba(33, 63, 127, 0.865);
+  cursor: pointer;
+  font-size: 25px;
   display: none;
 }
 
@@ -32,4 +35,11 @@ html,
 
 a {
   text-decoration: none;
+}
+
+//profile 
+
+.logout {
+  color: rgba(33, 63, 127, 0.865);
+  cursor: pointer;
 }

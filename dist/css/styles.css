@@ -10928,6 +10928,9 @@ body {
 }
 
 .send_to_signin {
+  color: rgba(33, 63, 127, 0.865);
+  cursor: pointer;
+  font-size: 25px;
   display: none;
 }
 
@@ -10953,4 +10956,9 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.logout {
+  color: rgba(33, 63, 127, 0.865);
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

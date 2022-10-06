@@ -28,7 +28,8 @@ function valueInput (event) {
             
             if(json.email === email.value){
                 localStorage.setItem("accsessToken", accessToken);
-                localStorage.setItem("userName", json.name)
+                localStorage.setItem("userName", json.name);
+                localStorage.setItem("avatar", json.avatar);
                 window.open("profile.html", "_self");
             } else {
                 displayMessage.innerHTML =  `invalid email or password please try again`;
