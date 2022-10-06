@@ -1,6 +1,6 @@
 import { posts, authorization} from "./API_URLs_export.mjs";
 //import {displayPostsProfile} from "./post_feed_export.mjs";
-import {searchFunction} from "./search_filter.mjs";
+import { searchFunctionProfile } from "./search_filter.mjs";
 import {  displayPostsProfile } from "./posts/post_content_export.mjs";
 let jsonPostData = [];
 
@@ -19,7 +19,7 @@ async function getPosts(url) {
         //const json = await response.json();
         jsonPostData = await response.json();
         displayPostsProfile(jsonPostData);
-        searchFunction(jsonPostData); 
+        searchFunctionProfile(jsonPostData); 
         
 
     

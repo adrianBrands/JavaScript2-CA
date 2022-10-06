@@ -1,7 +1,7 @@
 import { posts, authorization} from "./API_URLs_export.mjs";
 //import {displayPosts} from "./post_feed_export.mjs";
 import { displayPostsHome } from "./posts/post_content_export.mjs";
-import { searchFunction } from "./search_filter.mjs";
+import { searchFunctionHome } from "./search_filter.mjs";
 
 
 let jsonPostData = [];
@@ -22,7 +22,7 @@ async function getPosts(url) {
         //displayPostsHome(json);
         
         displayPostsHome(jsonPostData);
-        searchFunction(jsonPostData); 
+        searchFunctionHome(jsonPostData); 
         
         
 

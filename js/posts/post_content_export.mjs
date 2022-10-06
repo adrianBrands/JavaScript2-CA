@@ -3,7 +3,7 @@ export function postContent (post) {
         title: post.title,
         username: post.author.name,
         image: post.media,
-        created: post.created,
+        created: post.created.slice(0, 10),
         body: post.body,
         id: post.id,
         tags: post.tags

@@ -35,11 +35,11 @@ function valueInput(event){
 
             }
             
-            if(json.message === "Profile already exists"){
+            else if(json.message === "Profile already exists"){
               displayErrorMessage.innerHTML = json.message;
               displayErrorMessage.style.color = "red";
               
-          } if (json.name === username.value){
+          } else if (json.name === username.value){
               
               console.log("success");
               removeForm.forEach((e) => {

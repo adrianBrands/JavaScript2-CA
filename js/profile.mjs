@@ -6,7 +6,7 @@ const userName = () => {
     if (retriveUserNameFromLocal) {
         displayUsername.innerHTML = `${retriveUserNameFromLocal}`;
     } else {
-        console.log("hgekki")
+        console.log("")
     }
     
 
