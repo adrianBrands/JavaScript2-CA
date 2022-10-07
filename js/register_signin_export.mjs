@@ -9,24 +9,32 @@ const displayErrorMessage = document.querySelector(".h1");
 const displaySignInButton = document.querySelector(".send_to_signin");
 
 const validateEmail = (email) => {
-    const regEx = /^[\w\-.]+@(stud.)?noroff.no$/g;
-    const patternMatches = regEx.test(email);
-    return patternMatches;
-}
+  const regEx = /^[\w\-.]+@(stud.)?noroff.no$/g;
+  const patternMatches = regEx.test(email);
+  return patternMatches;
+};
 
 const checkIfLoggedIn = () => {
-    const getLocal = localStorage.getItem("accsessToken");
-if (getLocal !== null){
+  const getLocal = localStorage.getItem("accsessToken");
+  if (getLocal !== null) {
     removeForm.forEach((e) => {
-        e.style.display = "none";
+      e.style.display = "none";
     });
     displayMessage.innerHTML = `You are logged in`;
     submit.style.display = "none";
-}
+  }
+};
 
-}
-
-
-
-export {email, password, displayMessage, removeForm, submit, avatar, validateEmail, username, displayErrorMessage, 
-    displaySignInButton, checkIfLoggedIn};
+export {
+  email,
+  password,
+  displayMessage,
+  removeForm,
+  submit,
+  avatar,
+  validateEmail,
+  username,
+  displayErrorMessage,
+  displaySignInButton,
+  checkIfLoggedIn,
+};
