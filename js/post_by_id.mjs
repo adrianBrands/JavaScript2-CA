@@ -20,10 +20,13 @@ async function getPosts(url) {
     const response = await fetch(url, getData);
     console.log(response);
     const json = await response.json();
+
+    
+    
     displayPostById(json);
     jsonValue(json);
 
-    console.log(json);
+    
   } catch (error) {
     console.log(error);
   }

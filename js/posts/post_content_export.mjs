@@ -11,21 +11,29 @@ export function postContent (post) {
 }
 
 
+
 export const displayPostsProfile = (posts) => {
     const createHtmlPosts = document.querySelector(".posts-feed");
-    const htmlPosts = posts.map((post) => {
-    const {username, image, created, body, id, title} = postContent(post);
+    
+    const htmlPosts = posts.flatMap((post) => {
+        const {username, image, created, body, id, title} = postContent(post);
 
-        return `<div class="card mb-3 w-100 ">
-        <a href="post.html?id=${id}"><img src="${image}" class="card-img-top" alt="image uploaded by ${username}">
-        <div class="card-body">
-            <h3 class="card-title">${username}</h3>
-            <h4 class="card-text">${title}</small></h4>
-            <p class="card-text">${body}</small></p>
-            <p class="card-text"><small class="text-muted">Published ${created} </small></p>
+        if(post.media === ""){
+            return [];
+          } else if (post.media !== ""){
+              return `<div class="card mb-3 w-100 ">
+                        <a href="post.html?id=${id}"><img src="${post.media}" class="card-img-top" alt="image uploaded by ${username}">
+                        <div class="card-body">
+                            <h3 class="card-title">${username}</h3>
+                            <h4 class="card-text">${title}</small></h4>
+                            <p class="card-text">${body}</small></p>
+                            <p class="card-text"><small class="text-muted">Published ${created} </small></p>
+                        </div></a>
+                    </div>`;
             
-        </div></a>
-    </div>`;
+          }
+
+        
     })
     .join('')
     createHtmlPosts.innerHTML = htmlPosts;

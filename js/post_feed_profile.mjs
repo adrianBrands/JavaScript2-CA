@@ -16,9 +16,40 @@ async function getPosts(url) {
     const response = await fetch(url, getData);
     
 
-    jsonPostData = await response.json();
+      jsonPostData = await response.json();
+
+
+    /*let test = jsonPostData.flatMap((entry) => {
+      
+      if(entry.media === ""){
+        return [];
+      } else if (entry.media !== ""){
+         return entry.media;
+        
+      }
+    })
+//console.log(test);
+    */
+
+
+
+   
+    
+
+
+
+
+
+    
+    
+    
+    
+    //console.log(test);
+
     displayPostsProfile(jsonPostData);
+    
     searchFunctionProfile(jsonPostData);
+    
   } catch (error) {
     console.log(error);
   }
