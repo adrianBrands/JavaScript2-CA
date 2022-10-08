@@ -33,10 +33,12 @@
                         <a class="nav-link" href="create_post.html">Create post</a>
                     </li>
                 </ul>
+                
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
+                
             </div>
         </div>
     </nav>
@@ -56,27 +58,23 @@
                 </div>
                 <div class="card mt-3">
                     <div class="card-body">
-                        <h5 class="card-title">Contacts</h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Jennifer Rowling</li>
-                            <li class="list-group-item">Andrew Smith</li>
-                            <li class="list-group-item">Kelly Williams</li>
-                        </ul>
+                        <h5 class="card-title">Filter posts</h5>
+                        <div class="btn-group dropend">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Filter posts
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="today dropdown-item" href="#">today</a></li>
+                                <li><a class="yesterday dropdown-item" href="#">yesterday</a></li>
+                                <li><a class="dropdown-item" href="#"></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="card mt-3 mb-5">
                     <div class="card-body">
                         <h5 class="card-title">Post to wall</h5>
-                        <div class="btn-group dropend">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                Choose contacts
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Jennifer Rowling</a></li>
-                                <li><a class="dropdown-item" href="#">Andrew Smith</a></li>
-                                <li><a class="dropdown-item" href="#">Kelly Williams</a></li>
-                            </ul>
-                        </div>
+                        
                         <form>
                             <h6 class="card-subtitle mb-1 text-muted mt-5">Image upload</h6>
                             <div class="input-group mb-3 mt-2">
@@ -91,6 +89,9 @@
                     </div>
                 </div>
             </div>
+            
+           
+            
             <div class="posts-feed col-sm-7"></div>
         </div>
     </div>
