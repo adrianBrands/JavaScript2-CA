@@ -3,7 +3,10 @@ const retriveUserNameFromLocal = localStorage.getItem("userName");
 const retriveAvatar = localStorage.getItem("avatar");
 const displayAvatar = document.querySelector(".w-100");
 
-
+/**
+ * this function displays the avatar image and the username on the profile page
+ * @returns 
+ */
 const userProfile = () => {
     if (retriveUserNameFromLocal) {
         displayUsername.innerHTML = `${retriveUserNameFromLocal}`;

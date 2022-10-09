@@ -17,6 +17,10 @@ async function updatePost(postData) {
   const result = await response.json();
 }
 
+
+/**
+ * this function updates a post using the input values typed into the update-post form
+ */
 function createFormListener() {
   const form = document.querySelector("#update_post");
 

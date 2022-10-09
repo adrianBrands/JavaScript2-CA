@@ -24,6 +24,9 @@ async function createPost(postData) {
   }
 }
 
+/**
+ * this function creates a post using the input values typed into the create-post form.
+ */
 function createFormListener() {
   const form = document.querySelector("#create_post");
 

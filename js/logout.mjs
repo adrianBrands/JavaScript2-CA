@@ -2,6 +2,11 @@ const logOut = document.querySelector(".logout");
 
 logOut.addEventListener("click", checkLocalStorage)
 
+
+/**
+ * this function logs out the user 
+ *  
+ */
 function checkLocalStorage(event){
     event.preventDefault();
     const getLocal = localStorage.getItem("accsessToken");

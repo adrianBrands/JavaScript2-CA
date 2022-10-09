@@ -1,5 +1,5 @@
 import { posts, authorization } from "./API_URLs_export.mjs";
-import { searchFunctionProfile, filterByDate } from "./search_filter.mjs";
+import { searchFunctionProfile, filterByDateProfile } from "./search_filter.mjs";
 import { displayPostsProfile } from "./posts/post_content_export.mjs";
 let jsonPostData = [];
 
@@ -19,7 +19,7 @@ async function getPosts(url) {
     displayPostsProfile(jsonPostData);
     searchFunctionProfile(jsonPostData);
   
-    filterByDate(jsonPostData);
+    filterByDateProfile(jsonPostData);
   
   
   } catch (error) {

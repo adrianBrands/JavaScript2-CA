@@ -8,12 +8,19 @@ const avatar = document.querySelector("#avatar");
 const displayErrorMessage = document.querySelector(".h1");
 const displaySignInButton = document.querySelector(".send_to_signin");
 
+/**
+ * this functon validates the email
+ *  
+ */
 const validateEmail = (email) => {
   const regEx = /^[\w\-.]+@(stud.)?noroff.no$/g;
   const patternMatches = regEx.test(email);
   return patternMatches;
 };
 
+/**
+ * this function checks if the user is logged in
+ */
 const checkIfLoggedIn = () => {
   const getLocal = localStorage.getItem("accsessToken");
   if (getLocal !== null) {

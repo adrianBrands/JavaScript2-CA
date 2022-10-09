@@ -4,6 +4,12 @@ const removeButton = document.querySelector(".remove_post_button");
 const displayUpdateForm = document.querySelector(".flex-grow-1");
 const userName = localStorage.getItem("userName");
 
+
+/**
+ * this function checks if a user can update or remove a post and validates this by 
+ * checking if the user is the owner of the specific post
+ *  
+ */
 export function jsonValue(json) {
   const postValues = {
     username: json.author.name,

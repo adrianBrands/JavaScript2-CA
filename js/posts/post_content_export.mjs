@@ -10,15 +10,22 @@ export function postContent(post) {
   };
 }
 
+
+/**
+ * this function displays the posts on the profile page, and
+ * it will only display posts wich has an image-url added to the 
+ * json data. 
+ * @param {} posts 
+ */
 export const displayPostsProfile = (posts) => {
   const createHtmlPosts = document.querySelector(".posts-feed");
   const htmlPosts = posts
     .flatMap((post) => {
       const { username, image, created, body, id, title } = postContent(post);
 
-      if (post.media === "") {
+      if (image === "") {
         return [];
-      } else if (post.media !== "") {
+      } else if (image !== "") {
         return `<div class="card mb-3 w-100 ">
                         <a href="post.html?id=${id}"><img src="${image}" class="card-img-top" alt="image uploaded by ${username}">
                         <div class="card-body">
@@ -34,15 +41,21 @@ export const displayPostsProfile = (posts) => {
   createHtmlPosts.innerHTML = htmlPosts;
 };
 
+/**
+ * this function displays the posts on the home page, and
+ * it will only display posts wich has an image-url added to the 
+ * json data. 
+ * @param {} posts 
+ */
 export const displayPostsHome = (posts) => {
   const createHtmlPosts = document.querySelector(".posts-feed");
   const htmlPosts = posts
     .map((post) => {
       const { username, image, created, body, id, title } = postContent(post);
 
-      if (post.media === "") {
+      if (image === "") {
         return [];
-      } else if (post.media !== "") {
+      } else if (image !== "") {
         return `<div class="card mb-3 w-75 ">
                     <a href="post.html?id=${id}"><img src="${image}" class="card-img-top" alt="image uploaded by ${username}">
                     <div class="card-body">
@@ -58,6 +71,11 @@ export const displayPostsHome = (posts) => {
   createHtmlPosts.innerHTML = htmlPosts;
 };
 
+
+/**
+ * this function displays a single post by its id. 
+ * @param {} post 
+ */
 export const displayPostById = (post) => {
   const createHtmlPost = document.querySelector(".post");
   const { username, image, created, body, title, tags } = postContent(post);
