@@ -113,9 +113,12 @@ export const filterByDateHome = (jsonPostData) => {
     const todayDateString = today.getDate() + "";
     
     const filterJsonDates = jsonPostData.filter((post) => {
-      const jsonDataPostDate = post.created.slice(9, 10);
-      if (jsonDataPostDate === todayDateString) {
+      const jsonDataPostDateOneDigit = post.created.slice(9, 10);
+      const jsonDataPostDateTwoDigits = post.created.slice(8, 10);
+      if (jsonDataPostDateOneDigit === todayDateString || jsonDataPostDateTwoDigits === todayDateString) {
         return post.created;
+      } else {
+        console.log()
       }
     });
 
@@ -128,8 +131,9 @@ export const filterByDateHome = (jsonPostData) => {
     const previousDateString = previous.getDate() + "";
     
     const filterJsonDates = jsonPostData.filter((post) => {
-      const jsonDataPostDate = post.created.slice(9, 10);
-      if (jsonDataPostDate === previousDateString) {
+      const jsonDataPostDateOneDigit = post.created.slice(9, 10);
+      const jsonDataPostDateTwoDigits = post.created.slice(8, 10);
+      if (jsonDataPostDateOneDigit === previousDateString || jsonDataPostDateTwoDigits === previousDateString) {
         return post.created;
       }
     });
