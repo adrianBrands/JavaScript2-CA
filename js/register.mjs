@@ -10,6 +10,8 @@ import {
   displaySignInButton,
   submit,
   avatar,
+  displayAvatarInput,
+  avatarButton
 } from "./register_signin_export.mjs";
 
 function valueInput(event) {
@@ -21,6 +23,10 @@ function valueInput(event) {
     password: password.value,
     avatar: avatar.value,
   };
+  
+  if (userInputRegister.avatar === ""){
+    delete userInputRegister.avatar;
+  } 
 
   validateEmail();
 
@@ -50,6 +56,7 @@ function valueInput(event) {
           e.style.display = "none";
         });
         submit.style.display = "none";
+        avatarButton.style.display = "none";
         displayErrorMessage.innerHTML = `Success, you can go and sign in with your new account`;
         displaySignInButton.style.display = "block";
       }
@@ -62,3 +69,4 @@ function valueInput(event) {
 }
 
 submit.addEventListener("click", valueInput);
+displayAvatarInput();

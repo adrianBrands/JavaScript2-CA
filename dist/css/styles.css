@@ -10934,6 +10934,10 @@ body {
   display: none;
 }
 
+.hide_avatar {
+  display: none;
+}
+
 .flex-grow-1 {
   display: none;
 }

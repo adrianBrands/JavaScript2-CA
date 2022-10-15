@@ -18,7 +18,6 @@ async function getPosts(url) {
 
     displayPostsProfile(jsonPostData);
     searchFunctionProfile(jsonPostData);
-  
     filterByDateProfile(jsonPostData);
   
   

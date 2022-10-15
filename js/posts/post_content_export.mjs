@@ -12,9 +12,7 @@ export function postContent(post) {
 
 
 /**
- * this function displays the posts on the profile page, and
- * it will only display posts wich has an image-url added to the 
- * json data. 
+ * this function displays the posts on the profile page. 
  * @param {} posts 
  */
 export const displayPostsProfile = (posts) => {
@@ -50,9 +48,7 @@ export const displayPostsProfile = (posts) => {
 };
 
 /**
- * this function displays the posts on the home page, and
- * it will only display posts wich has an image-url added to the 
- * json data. 
+ * this function displays the posts on the home page. 
  * @param {} posts 
  */
 export const displayPostsHome = (posts) => {
