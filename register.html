@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/css/styles.css">
-    <title>Sign in</title>
+    <title>register</title>
 </head>
 <body class="bg-secondary">
     <header>
@@ -44,7 +44,6 @@
     <div class="h-100 d-flex  justify-content-center align-items-center">
         <form class="was-validated d-flex flex-column justify-content-center align-items-center">
             <h1 class="h1 mb-3 fw-light">Please register an account</h1>
-            
             <div class="form-floating mb-3">
                 <input type="name" class="form-control" id="username" placeholder="username" required>
                 <label for="floatingInput">Username</label>
@@ -63,9 +62,6 @@
                 <div class="valid-feedback">Valid password</div>
                 <div class="invalid-feedback mb-3">please write a password</div>
             </div>
-            
-            
-            
             <div class="form-floating hide_avatar" id="avatar_div">
                 <input type="url" class="form-control" id="avatar" placeholder="avatar">
                 <label for="floatingInput">avatar / not requierd</label>
@@ -78,11 +74,9 @@
             <button id="submit" class="btn btn-lg btn-primary" type="submit">Register</button>
             <a class="send_to_signin" href="/signin.html">Sign in</a>
         </form>
-        
     </div>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="/js/register.mjs"></script>
     <script type="module" src="/js/hide_links.mjs"></script>
-
 </body>
 </html>

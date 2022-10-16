@@ -16,7 +16,7 @@ import {
 /**
  * this function only runs when a click is detected at submit.addEventListener("click", valueInput);
  * 
- * @param {} event from the addeventListener
+ * @param {Event} event from the addeventListener
  */
 function valueInput(event) {
   event.preventDefault();

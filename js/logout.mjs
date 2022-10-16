@@ -3,7 +3,7 @@ const logOut = document.querySelector(".logout");
 /**
  * this function logs out the user and removes all the saved items in local storage,
  * and redirects the user to the sign in page
- * @param {} event from the addevEntListener
+ * @param {Event} event from the addevEntListener
  *
  */
 function checkLocalStorage(event) {
