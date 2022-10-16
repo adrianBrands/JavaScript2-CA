@@ -5,9 +5,13 @@ import { jsonValue } from "./checkIf_user_can_update_remove.mjs";
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-
 const postURL = post + id + post_author;
 
+/**
+ * gets url and getData to run and api request and gets a single post by its id
+ * @param {string} url {the API url}
+ * @param {object} getData {method, headers}
+ */
 async function getPosts(url) {
   try {
     const getData = {
@@ -17,16 +21,12 @@ async function getPosts(url) {
         Authorization: `Bearer ${authorization}`,
       },
     };
+
     const response = await fetch(url, getData);
-    console.log(response);
     const json = await response.json();
 
-    
-    
     displayPostById(json);
     jsonValue(json);
-
-    
   } catch (error) {
     console.log(error);
   }

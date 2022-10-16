@@ -6,8 +6,11 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 const postURL = post + id + post_author;
-
 const method = "put";
+/**
+ * runs an api request 
+ * @param {object} postData {method, headers} 
+ */
 async function updatePost(postData) {
   const response = await fetchWithToken(postURL, {
     method,

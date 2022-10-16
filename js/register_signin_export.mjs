@@ -11,8 +11,9 @@ const displayAvatar = document.querySelector("#avatar_div");
 const avatarButton = document.querySelector(".avatar_img");
 
 /**
- * this functon validates the email
- *
+ * checks if string is a noroff email
+ * @param {input} email
+ * @returns {boolean}
  */
 const validateEmail = (email) => {
   const regEx = /^[\w\-.]+@(stud.)?noroff.no$/g;
@@ -21,7 +22,8 @@ const validateEmail = (email) => {
 };
 
 /**
- * this function checks if the user is logged in
+ * this function checks if the user is logged in. If user is logged in: login-form-
+ * gets hidden and a messege is displayed.
  */
 const checkIfLoggedIn = () => {
   const getLocal = localStorage.getItem("accsessToken");
@@ -34,12 +36,16 @@ const checkIfLoggedIn = () => {
   }
 };
 
+/**
+ * toggles bewteen avatar input
+ */
 const displayAvatarInput = () => {
   avatarButton.addEventListener("click", (event) => {
     event.preventDefault();
     displayAvatar.classList.toggle("hide_avatar");
   });
 };
+
 export {
   email,
   password,

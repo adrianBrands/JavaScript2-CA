@@ -6,8 +6,12 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 const postURL = post + id + post_author;
-
 const method = "delete";
+/**
+ * runs an api request
+ * deletes a post by its id, if the logged in user is the owner of the specific post
+ * @param {object} postData {method, headers}
+ */
 async function removePost(postData) {
   const response = await fetchWithToken(postURL, {
     method,
@@ -15,20 +19,17 @@ async function removePost(postData) {
   });
 
   const result = await response.json();
-  
-  if (typeof result === "number"){
+
+  if (typeof result === "number") {
     setTimeout(() => {
-        window.open("index.html", "_self");
-      }, 1000);
-  } 
-  
+      window.open("index.html", "_self");
+    }, 1000);
+  }
 }
 
-const removeButton = document.querySelector(".remove_post_button")
+const removeButton = document.querySelector(".remove_post_button");
 removeButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    
-    removePost();
+  event.preventDefault();
 
+  removePost();
 });
-

@@ -1,4 +1,3 @@
-//register user
 import { registerUrl } from "./API_URLs_export.mjs";
 import {
   validateEmail,
@@ -11,9 +10,14 @@ import {
   submit,
   avatar,
   displayAvatarInput,
-  avatarButton
+  avatarButton,
 } from "./register_signin_export.mjs";
 
+/**
+ * this function only runs when a click is detected at submit.addEventListener("click", valueInput);
+ * 
+ * @param {} event from the addeventListener
+ */
 function valueInput(event) {
   event.preventDefault();
 
@@ -23,13 +27,23 @@ function valueInput(event) {
     password: password.value,
     avatar: avatar.value,
   };
-  
-  if (userInputRegister.avatar === ""){
+
+  if (userInputRegister.avatar === "") {
     delete userInputRegister.avatar;
-  } 
+  }
 
   validateEmail();
 
+  /**
+   * takes the url and fetch the userdata to run an API request
+   * registrates a user by the imported registerUrl and the input values from-
+   * the object userInputRegister.
+   * checks if all the requirments are met, if not an error message will be displayed
+   * @param {string} url {API url}
+   * @param {object} userData {method, headers, body}
+   * @example
+   * registerUser(registerUrl, userInputRegister);
+   */
   async function registerUser(url, userData) {
     try {
       const postData = {
@@ -39,19 +53,17 @@ function valueInput(event) {
         },
         body: JSON.stringify(userData),
       };
-      const response = await fetch(url, postData);
 
+      const response = await fetch(url, postData);
       const json = await response.json();
       console.log(json);
 
       if (!validateEmail(email.value)) {
-        console.log("wrong email");
         displayErrorMessage.innerHTML = `email has to contain @noroff.no or @stud.noroff.no`;
       } else if (json.message === "Profile already exists") {
         displayErrorMessage.innerHTML = json.message;
         displayErrorMessage.style.color = "red";
       } else if (json.name === username.value) {
-        console.log("success");
         removeForm.forEach((e) => {
           e.style.display = "none";
         });
@@ -69,4 +81,5 @@ function valueInput(event) {
 }
 
 submit.addEventListener("click", valueInput);
+
 displayAvatarInput();

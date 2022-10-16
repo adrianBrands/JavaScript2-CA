@@ -7,13 +7,27 @@ import {
   checkIfLoggedIn,
 } from "./register_signin_export.mjs";
 
+/**
+ * this function only runs when a click is detected at submit.addEventListener("click", valueInput);
+ * @param {*} event
+ */
 function valueInput(event) {
   event.preventDefault();
+
   const userInput = {
     email: email.value,
     password: password.value,
   };
-
+  /**
+   * takes the url and fetch the userdata to run an API request
+   * signs in a user by the imported signInUrl and the input values from-
+   * the object userInput.
+   * checks if all the requirments are met, if not an error message will be displayed
+   * @param {string} url {API url}
+   * @param {object} userData {method, headers, body}
+   * @example
+   * registerUser(signInUrl, userInput);
+   */
   async function registerUser(url, userData) {
     console.log(url, userData);
     try {
@@ -49,5 +63,3 @@ function valueInput(event) {
 submit.addEventListener("click", valueInput);
 
 checkIfLoggedIn();
-
-

@@ -4,6 +4,7 @@ import { displayPostsProfile } from "./posts/post_content_export.mjs";
  * this function will search trough the posts that are displayed on the-
  * home page and return and display the posts that contains the-
  * value that is typed into the search bar.
+ * @param {Array} jsonPostData the array of objects from the API
  *
  */
 export const searchFunctionHome = (jsonPostData) => {
@@ -26,7 +27,7 @@ export const searchFunctionHome = (jsonPostData) => {
  * this function will search trough the posts that are displayed on the-
  * profile page and return and display the posts that contains the-
  * value that is typed into the search bar.
- * @param {*} jsonPostData
+ * @param {Array} jsonPostData the array of objects from the API
  */
 export const searchFunctionProfile = (jsonPostData) => {
   const searchInput = document.querySelector(".form-control");
@@ -49,7 +50,7 @@ export const searchFunctionProfile = (jsonPostData) => {
  * them on the profile page.
  * it shows the posts made on the actual date or it
  * can show the posts that was made the previous day
- * @param {*} jsonPostData
+ * @param {Array} jsonPostData the array of objects from the API
  */
 export const filterByDateProfile = (jsonPostData) => {
   const filterToday = document.querySelector(".today");
@@ -101,7 +102,7 @@ export const filterByDateProfile = (jsonPostData) => {
  * them on the home page.
  * it shows the posts made on the actual date or it
  * can show the posts that was made the previous day
- * @param {*} jsonPostData
+ * @param {Array} jsonPostData the array of objects from the API
  */
 export const filterByDateHome = (jsonPostData) => {
   const filterToday = document.querySelector(".today");
