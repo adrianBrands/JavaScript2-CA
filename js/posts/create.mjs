@@ -18,14 +18,16 @@ async function createPost(postData) {
 
   const result = await response.json();
   const error = result.error;
+  console.log(result)
+  console.log(response)
 
   if (error) {
     displayErrorMessage.innerHTML = `${error}`;
     displayErrorMessage.style.color = "red";
   } else {
-    setTimeout(() => {
+    /*setTimeout(() => {
       window.open("index.html", "_self");
-    }, 1500);
+    }, 1500);*/
   }
 }
 
@@ -48,7 +50,10 @@ function createFormListener() {
       }
 
       createPost(post);
+      console.log(post)
     });
   }
 }
-createFormListener();
+createFormListener()
+
+

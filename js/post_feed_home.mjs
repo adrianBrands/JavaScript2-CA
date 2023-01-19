@@ -1,6 +1,6 @@
 import { posts, authorization } from "./API_URLs_export.mjs";
 import { displayPostsHome } from "./posts/post_content_export.mjs";
-import { searchFunctionHome, filterByDateHome } from "./search_filter.mjs";
+import { searchFunction, filterByDate} from "./search_filter.mjs";
 
 let jsonPostData = [];
 /**
@@ -21,8 +21,8 @@ async function getPosts(url) {
     jsonPostData = await response.json();
 
     displayPostsHome(jsonPostData);
-    searchFunctionHome(jsonPostData);
-    filterByDateHome(jsonPostData);
+    searchFunction(jsonPostData);
+    filterByDate(jsonPostData);
   } catch (error) {
     console.log(error);
   }
