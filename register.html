@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/styles.css">
+    <title>register</title>
+</head>
+<body class="bg-secondary">
+    <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">Social</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item hide">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item hide">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signin.html">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item hide">
+                        <a class="nav-link" href="create_post.html">Create post</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <div class="h-100 d-flex  justify-content-center align-items-center">
+        <form class="was-validated d-flex flex-column justify-content-center align-items-center">
+            <h1 class="h1 mb-3 fw-light">Please register an account</h1>
+            <div class="form-floating mb-3">
+                <input type="name" class="form-control" id="username" placeholder="username" required>
+                <label for="floatingInput">Username</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">please write a valid username</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="@noroff.no" required>
+                <label for="floatingInput">Email address</label>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">please write a valid email address</div>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" minlength="8" required>
+                <label for="floatingPassword">Password</label>
+                <div class="valid-feedback">Valid password</div>
+                <div class="invalid-feedback mb-3">please write a password</div>
+            </div>
+            <div class="form-floating hide_avatar" id="avatar_div">
+                <input type="url" class="form-control" id="avatar" placeholder="avatar">
+                <label for="floatingInput">avatar / not requierd</label>
+                <div class="valid-feedback">Valid url</div>
+                <div class="invalid-feedback mb-3">invalid url</div>
+            </div>
+            <div class="avatrButton mb-5">
+                <button class="btn btn-outline-primary avatar_img" type="submit">avatar image</button>
+            </div>
+            <button id="submit" class="btn btn-lg btn-primary" type="submit">Register</button>
+            <a class="send_to_signin" href="/signin.html">Sign in</a>
+        </form>
+    </div>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/js/register.mjs"></script>
+    <script type="module" src="/js/hide_links.mjs"></script>
+</body>
+</html>

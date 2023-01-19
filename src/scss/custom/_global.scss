@@ -1,0 +1,33 @@
+html,
+ body {
+  height: 100%;
+  
+}
+
+//register.html 
+
+.send_to_signin {
+  color: rgba(33, 63, 127, 0.865);
+  cursor: pointer;
+  font-size: 25px;
+  display: none;
+}
+
+.hide_avatar {
+ display: none;
+}
+
+.flex-grow-1{
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+//profile 
+
+.logout {
+  color: rgba(33, 63, 127, 0.865);
+  cursor: pointer;
+}
